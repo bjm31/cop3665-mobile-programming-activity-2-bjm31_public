@@ -1,10 +1,9 @@
 package com.example.criminalintent;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
@@ -19,7 +18,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
 
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
-        if (fragment == null)
+        if(fragment == null)
         {
             fragment = createFragment();
             fm.beginTransaction()
@@ -27,4 +26,5 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
                     .commit();
         }
     }
+
 }
